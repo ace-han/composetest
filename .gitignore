@@ -1,0 +1,15 @@
+*.py[co]
+
+### PyCharm ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.log
+
+### Eclipse ###
+/.settings
+
+node_modules/
+db.sqlite3
+Pipfile.lock

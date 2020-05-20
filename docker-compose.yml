@@ -1,0 +1,19 @@
+  version: "3"
+    
+  services:
+
+    web:
+      build: .
+      #command: python pydevd_manage.py runserver 0.0.0.0:8090
+      command: python ptvsd_manage.py runserver 0.0.0.0:8090
+      volumes:
+        # this means live reflect your local changes to docker container
+        - .:/code
+      ports:
+        - "8090:8090"
+        # ptvsd debug port
+        - "3000:3000"
+      environment:
+        # forget about the path mapping for `/usr/local/lib/python3.6/lib-dynload` and `/usr/local/lib/python3.6`
+        # in addition, Eclipse will prompt you to add the mapping if you don't specify any
+        - PATHS_FROM_ECLIPSE_TO_PYTHON=[["/Users/ace/workspace/ace/composetest", "/code"],["/Users/ace/.local/share/virtualenvs/composetest-omCHfw9V/lib/python3.6/site-packages", "/usr/local/lib/python3.6/site-packages"]]
