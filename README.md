@@ -12,9 +12,15 @@ cd $PROJECT_HOME
 # start the debug server in your eclipse 
 docker-compose up
 
-# if pyvsd
+# if ptvsd
 docker-compose up
-# attach to port 3000 in docker
+# attach to port 3000 in docker, refer to .vscode/launch.json#`Remote Django App` section
+# pay attention to `request`, `pathMappings`, `port`, `justMyCode` attributes
+launch `Remote Django App` in vscode debug menu
+
+# attact docker container shell to see more
+docker container ls
+docker exec -it $CONTAINER_NAME or $CONTAINER_ID sh
 
 
 open 'http://localhost:8090'
