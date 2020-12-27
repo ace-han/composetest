@@ -3,7 +3,7 @@ docker-compose test
 
 An example for docker remote debug with `pydevd` or `ptvsd`
 
-# Get started
+# Get Started
 ```sh
 cd $PROJECT_HOME
 # ensure you have docker installed
@@ -13,6 +13,7 @@ cd $PROJECT_HOME
 docker-compose up
 
 # if ptvsd
+poetry export -f requirements.txt --dev --without-hashes --output requirements.txt
 docker-compose up
 # attach to port 3000 in docker, refer to .vscode/launch.json#`Remote Django App` section
 # pay attention to `request`, `pathMappings`, `port`, `justMyCode` attributes
